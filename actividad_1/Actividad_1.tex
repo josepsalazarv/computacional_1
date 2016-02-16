@@ -1,0 +1,74 @@
+
+\documentclass[12pt]{article}
+\usepackage{mathtools}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,mexico]{babel}
+\usepackage{graphicx}
+%\graphicspath{ {\Users\Jose\Desktop\COMPUTACIONAL} }
+\DeclareGraphicsExtensions{.png}
+\title{Péndulo simple}
+\author{Jose Pablo Salazar Velazquez}
+\date{}
+\usepackage{graphicx}
+\begin{document}
+\maketitle
+    \begin{justified}
+   Describir el movimiento de un péndulo, mediante ecuaciones matemáticas, suele ser algo complicado. Se pueden hacer suposiciones que simplifican el análisis del problema. Para el caso del péndulo simple, permiten resolver analitacamente las ecuaciones de movimiento, para oscilaciones con un angulo incial pequeño.
+    \end{justified}
+    
+    \section{Péndulo simple}
+      \begin{justified}
+  Al hablar de un "péndulo simple", simplemente nos referimos al análisis de un "pendulo real" en un sistema aislado, haciendo las siguiente suposiciones:
+          \begin{itemize}
+         \item La barra, cable, o hilo, del cual se sostiene la plomada, no tiene masa.
+         \item La plomada, es una masa puntual.
+         \item El movimiento, ocurre solamente en 2 dimensiones.
+         \item El movimiento, no pierde energia debilo a la fricción o resistencia al aire.
+         \item El campo gravitacional, es uniforme.
+         \item El soporte, no se mueve.
+       \end{itemize}
+ La ecuación diferencial, que describe el movimiento del pendulo, es
+       \end{justified}
+ \begin{equation}
+ \frac{d^2\theta}{dt^2} + \frac{g}{l}\sin\theta = 0
+ \end{equation}
+ 
+      \begin{justified}
+ Donde g es la aceleracion de la gravedad, l es la longitud del pendulo, y $\theta$ es el desplazamiento angular.
+     \end{justified}
+     
+     \section{Aproximación por ángulos pequeños}
+        \begin{justified}
+     La equación diferencial del apartado anterior, no se resuelve facilmente. Sin embargo, podemos encontrar una solución si restringimos $\theta$,  para ángulos pequeños.
+     Se utiliza una amplitud para ángulos pequeños, mucho menores que 1 radian, significaria que $\sin\theta \approx \theta$ . Sustituyendo en la eq. (1)
+     \begin{equation}
+     \frac{d^2\theta}{dt^2} + \frac{g}{l}\theta = 0
+      \end{equation}
+      Esta, es la ecuación para un oscilador armónico. \\
+      La solución de esta ecuacion se vuelve:
+      \begin{equation}
+      $\theta (t) = \theta\cos(\sqrt(\frac{g}{L})(t))$
+    \end{justified}
+    
+    \section{Periodo para amplitudes arbitrarias}
+    \begin{justified}
+    Para amplitudes arbitrariamente grandes, en el pendulo,  uno puede encontrar el periodo exacto. Primero se invierte la velocidad angular, obtenida por el metodo de energía: \\
+   $\frac{d\theta}{dt} = \sqrt(\frac{l}{2g})(1/\sqrt(\cos\theta + \cos\theta_i)$
+    Despues, integrando sobre una circunferencia completa, usando 4 cuartos del circulo:
+    \begin{equation}
+    T = 4\sqrt(\frac{L}{2g})\int_0^\theta_i \! (1/\sqrt(\cos\theta + \cos\theta_i) \, \mathrm{d}x. 
+    \end{equation}
+    Esta ecuación puede ser re-escrita, como:
+    \begin{equation}
+    T = 4\sqrt(\frac{L}{2g}) K(\sin^2\frac{\theta_i}{2})
+    \end{equation}
+    Donde K esta definida como: \\
+    K(k) = F($\frac{\pi}{2}$,k) = \int_0^\frac{\pi}{2} \! (1/\sqrt($1 - k^2\sin^2(u)$) \, \mathrm{d}u. \\
+    
+   \begin{figure}[H]
+	\centering
+	\includegraphics[height=9cm]{teta_grande_chico}
+\end{figure}
+En a imagen, podemos ver la diferencia entre el periodo, para cuando variamos tetas en angulos pequeños o grandes.
+    \end{justified}
+\end{document}
